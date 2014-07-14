@@ -1,0 +1,10 @@
+#!/system/bin/sh
+InitD=/system/etc/init.d
+
+mount -o remount rw /system;
+chmod 777 $InitD/*;
+mount -o remount ro /system;
+
+for FILE in $InitD/*; do
+  sh $FILE;
+done;
