@@ -206,6 +206,11 @@ on post-fs-data
     mkdir /data/misc/dhcp 0770 dhcp dhcp
     chown dhcp system /data/misc/dhcp
 
+
+    # Update WIFI MAC address
+    mkdir /data/misc/wifi/prima 0775 wifi wifi
+    exec /sbin/mac-update
+
     # Create the directories used by CnE subsystem
     mkdir /data/connectivity 0771 system system
     chown system system /data/connectivity
